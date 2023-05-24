@@ -1,0 +1,33 @@
+CSE 111 Proposal for a Student Chosen Program
+
+1. What is the title of your program?
+Projectile Motion Calculator
+
+2. What real-world problem will your program address or help to solve?
+This will help solve the real-world scenario of a projectile motion
+physics question. It will allow a physicist to input the variables of projectile 
+motion into the calculator, and then know the other variables along with 
+a visual representation. This will only be in 2D, because I don't know how
+to do 3D projectiles with the calculations or the programming.
+
+3. What will you learn from developing this program?
+I will learn how to use functions to solve for several systems of equations
+in a single kinematics problem, and how to display the graph of projectile for the user to see.
+
+4. What Python modules will your program use?
+Some modules I will be using are matplotlib, pytest, numpy, and math
+
+5. Will you separate your Python program into functions that each
+perform a single task?
+Yes, I will have several functions that solve for the needed projectile motion variables.
+For example, if the user's information renders it possible to create the equation, then the function will tell me so.
+I will also have several functions that actually compute the other variables needed for the equation based on the different
+possible values that the user could've possibly put in. I will then have functions to put this into information that 
+can be displayed on the screen for the user to see an analyze.
+
+6. Will you write test functions to test at least two of your program
+functions?
+Yes, I will write test functions for all the program functions I write in order to 
+ensure that they output the correct values for the given amount of variables, and that 
+my equations are correctly set up. It will also test that the program is able to sense if 
+there is not enough usable information.

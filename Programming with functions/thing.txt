@@ -1,0 +1,85 @@
+import numpy as np
+from matplotlib import pyplot
+
+
+"""
+𝑣𝑖+1=𝑣𝑖+𝑎𝑖Δ𝑡
+y𝑖+1=y𝑖+𝑣𝑖Δ𝑡
+
+#How long does it take for him to fall, 
+given the acceleration due to drag and not? 
+
+"""
+
+
+A = 1.04 #m^2
+C = 0.58
+#initial height
+y = 39.0e3 #m
+Re = 6.37e6 #m
+#Accel due to gravity
+g = (9.8 / (1 + (y / Re)) ** 2) #m/s^2
+#mass 
+m = 73.0 #kg
+#velocity initial
+v = 0
+#small time step to calc motion
+dt = 0.01
+#starting time 
+t = 0
+
+
+
+counter=0
+while y >= 0:
+    #atmospheric density
+    at_dense = (1.2) * np.exp(-y / (1e4))
+
+    #force due to drag
+    fd = ( (0.5) * at_dense * A * C * v ** 2) / m
+
+    #total acceleration
+    a = -g + fd
+    
+    v = v + a * dt
+    y = y + v * dt
+    t = t + dt
+    
+    counter+=1
+    if counter>1000000:
+        print("I broke!")
+        break
+
+        
+        
+#print(y)
+print(f"Total time of travel was with air resistance: {t:.2f}")
+
+
+#initial height
+y = 39.0e3 #m
+#Accel due to gravity
+g = (9.8 / (1 + (y / Re)) ** 2) #m/s^2
+#velocity initial
+v = 0
+#small time step to calc motion
+dt = 0.01
+#starting time 
+t = 0
+
+counter=0
+while y >= 0:
+    #total acceleration
+    a = -g
+    
+    v = v + a * dt
+    y = y + v * dt
+    t = t + dt
+    
+    counter+=1
+    if counter>1000000:
+        print("I broke!")
+        break
+        
+#print(y)
+print(f"Total time of travel without air resistance: {t:.2f}")
